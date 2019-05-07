@@ -4,10 +4,12 @@ package lab.null_check
  * @author Evgeny Borisov
  */
 class AddressService {
-    //todo declare map of person id against person object
+    Map<Integer,Student> students =[:]
+
+
 
     String getStreetNameOfStudentById(int id) {
-
+        students[id]?.address?.streetName
     }
 
 }

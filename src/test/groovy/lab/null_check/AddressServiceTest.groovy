@@ -13,10 +13,8 @@ public class AddressServiceTest {
 
     @Test
     public void getStreetNameOfStudentById() {
-
-
-        def service = new AddressService(students: [1: new Student(name: 'Moshe', address: new Address(streetName: HERTZEL))]
+        def service = new AddressService(students: [1: null])
         def streetName = service.getStreetNameOfStudentById(1)
-        Assert.assertEquals(HERTZEL,streetName)
+        Assert.assertEquals(null,streetName)
     }
 }
