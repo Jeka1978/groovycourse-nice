@@ -12,6 +12,7 @@ class ListUtil {
     static <T> int countDuplicates(T t, List<T> list,Closure closure) {
         int counter = 0
         for (T obj in list) {
+            if(closure)
             if (closure.call(t,obj)) {
                 counter++
             }

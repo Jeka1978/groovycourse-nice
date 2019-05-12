@@ -10,6 +10,7 @@ class Money {
     String curr
     double amount
 
+
     Money plus(Money other){
         double modifier=1
         if(curr!=other.curr){
@@ -20,10 +21,7 @@ class Money {
     }
 
     public static void main(String[] args) {
-        /*def money = new Money(curr: 'ILS', amount: 100)
-        def money2 = new Money(curr: 'USD', amount: 200)
-        println(money+money2)*/
-        println((int)'5'.grep())
+        [1,2,3].each {println(it.class)}
     }
 
 }
