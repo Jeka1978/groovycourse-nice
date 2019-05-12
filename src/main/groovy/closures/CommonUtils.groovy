@@ -16,11 +16,11 @@ class CommonUtils {
         } else {
             def fieldName = c()
             list.each {
-                employee = new Employee("$fieldName": employee[fieldName] + it[fieldName])
+                employee[fieldName]+=it[fieldName]
+//                employee = new Employee("$fieldName": employee[fieldName] + it[fieldName])
             }
         }
         employee
-        1.times {}
     }
 
     public static void main(String[] args) {

@@ -1,11 +1,13 @@
 package operators_overloading
 
 import groovy.json.JsonSlurper
+import groovy.transform.Canonical
 
 /**
  * @author Evgeny Borisov
  */
-class Money {
+@Canonical
+class Money implements Comparable<Money>{
     int amount
     String currency
 
@@ -18,5 +20,17 @@ class Money {
             double rate = json.rate
             return new Money(currency: currency,amount: amount+money.amount*rate)
         }
+    }
+
+    @Override
+    int compareTo(Money otherMoney) {
+        return amount-otherMoney.amount
+    }
+
+    Money next(){
+        return new Money(amount: amount+1,currency: currency)
+    }
+    Money previous(){
+        return new Money(amount: amount-1,currency: currency)
     }
 }
